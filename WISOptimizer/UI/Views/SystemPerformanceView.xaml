@@ -1,0 +1,69 @@
+<UserControl x:Class="WISOptimizer.UI.Views.SystemPerformanceView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             d:DesignHeight="600" d:DesignWidth="800" Foreground="{StaticResource TextBrush}">
+    <Grid Margin="10">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <StackPanel Margin="0,0,0,20">
+            <TextBlock Text="System Performance" FontSize="28" FontWeight="Bold"/>
+            <TextBlock Text="Optimize visual effects and background service priorities." Foreground="{StaticResource SecondaryTextBrush}" FontSize="14"/>
+        </StackPanel>
+
+        <ScrollViewer Grid.Row="1" VerticalScrollBarVisibility="Auto">
+            <StackPanel Margin="0,0,10,0">
+                <GroupBox Header="Visual Effects">
+                    <StackPanel>
+                        <DockPanel Margin="0,5">
+                            <TextBlock Text="Disable animations" VerticalAlignment="Center"/>
+                            <CheckBox x:Name="chkAnimations" Style="{StaticResource ToggleSwitch}" DockPanel.Dock="Right" HorizontalAlignment="Right"/>
+                            <TextBlock x:Name="statusAnimations" Text="✔ Enabled" Foreground="{StaticResource SuccessBrush}" DockPanel.Dock="Right" Margin="0,0,15,0" VerticalAlignment="Center" FontSize="12"/>
+                        </DockPanel>
+                        <Separator Background="{StaticResource BorderBrush}" Margin="0,10"/>
+                        
+                        <DockPanel Margin="0,5">
+                            <TextBlock Text="Disable transparency" VerticalAlignment="Center"/>
+                            <CheckBox x:Name="chkTransparency" Style="{StaticResource ToggleSwitch}" DockPanel.Dock="Right" HorizontalAlignment="Right"/>
+                            <TextBlock x:Name="statusTransparency" Text="✖ Disabled" Foreground="{StaticResource DangerBrush}" DockPanel.Dock="Right" Margin="0,0,15,0" VerticalAlignment="Center" FontSize="12"/>
+                        </DockPanel>
+                        <Separator Background="{StaticResource BorderBrush}" Margin="0,10"/>
+
+                        <DockPanel Margin="0,5">
+                            <TextBlock Text="Adjust for best performance" VerticalAlignment="Center"/>
+                            <CheckBox x:Name="chkBestPerformance" Style="{StaticResource ToggleSwitch}" DockPanel.Dock="Right" HorizontalAlignment="Right"/>
+                            <TextBlock x:Name="statusBestPerformance" Text="✔ Enabled" Foreground="{StaticResource SuccessBrush}" DockPanel.Dock="Right" Margin="0,0,15,0" VerticalAlignment="Center" FontSize="12"/>
+                        </DockPanel>
+                    </StackPanel>
+                </GroupBox>
+
+                <GroupBox Header="Hardware Acceleration">
+                    <StackPanel>
+                        <DockPanel Margin="0,5">
+                            <TextBlock Text="GPU high performance" VerticalAlignment="Center"/>
+                            <CheckBox x:Name="chkGpuHighPerf" Style="{StaticResource ToggleSwitch}" DockPanel.Dock="Right" HorizontalAlignment="Right"/>
+                            <TextBlock x:Name="statusGpu" Text="⚠ Misconfigured" Foreground="#E2A03F" DockPanel.Dock="Right" Margin="0,0,15,0" VerticalAlignment="Center" FontSize="12"/>
+                        </DockPanel>
+                        <Separator Background="{StaticResource BorderBrush}" Margin="0,10"/>
+                        
+                        <DockPanel Margin="0,5">
+                            <TextBlock Text="Background services priority" VerticalAlignment="Center"/>
+                            <CheckBox x:Name="chkBackgroundPriority" Style="{StaticResource ToggleSwitch}" DockPanel.Dock="Right" HorizontalAlignment="Right"/>
+                            <TextBlock x:Name="statusBackground" Text="✔ Enabled" Foreground="{StaticResource SuccessBrush}" DockPanel.Dock="Right" Margin="0,0,15,0" VerticalAlignment="Center" FontSize="12"/>
+                        </DockPanel>
+                    </StackPanel>
+                </GroupBox>
+            </StackPanel>
+        </ScrollViewer>
+
+        <StackPanel Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Right" Margin="0,20,0,0">
+            <Button Content="Apply Changes" Style="{StaticResource ModernButton}" Click="Apply_Click"/>
+        </StackPanel>
+    </Grid>
+</UserControl>

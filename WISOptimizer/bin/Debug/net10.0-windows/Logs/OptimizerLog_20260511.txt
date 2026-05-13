@@ -1,0 +1,214 @@
+[2026-05-11 17:05:01] [INFO] Application Started
+[2026-05-11 17:07:50] [INFO] Creating System Restore Point: Before System Performance Changes
+[2026-05-11 17:07:50] [INFO] Executing PowerShell: Checkpoint-Computer -Description 'Before System Performance Changes' -RestorePointType 'MODIFY_SETTINGS'
+[2026-05-11 17:07:51] [WARNING] Execution Failed (Code 1). Error: Checkpoint-Computer : Access denied 
+At line:1 char:1
++ Checkpoint-Computer -Description 'Before System Performance Changes'  ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidOperation: (:) [Checkpoint-Computer], ManagementException
+    + FullyQualifiedErrorId : GetWMIManagementException,Microsoft.PowerShell.Commands.CheckpointComputerCommand
+ 
+
+[2026-05-11 17:09:49] [INFO] Application Started
+[2026-05-11 17:27:41] [INFO] Creating System Restore Point: Before UI Customization Changes
+[2026-05-11 17:27:41] [INFO] Executing PowerShell: Checkpoint-Computer -Description 'Before UI Customization Changes' -RestorePointType 'MODIFY_SETTINGS'
+[2026-05-11 17:27:42] [WARNING] Execution Failed (Code 1). Error: Checkpoint-Computer : Access denied 
+At line:1 char:1
++ Checkpoint-Computer -Description 'Before UI Customization Changes' -R ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidOperation: (:) [Checkpoint-Computer], ManagementException
+    + FullyQualifiedErrorId : GetWMIManagementException,Microsoft.PowerShell.Commands.CheckpointComputerCommand
+ 
+
+[2026-05-11 17:27:54] [INFO] Application Started
+[2026-05-11 17:28:11] [INFO] Creating System Restore Point: Before UI Customization Changes
+[2026-05-11 17:28:11] [INFO] Executing PowerShell: Checkpoint-Computer -Description 'Before UI Customization Changes' -RestorePointType 'MODIFY_SETTINGS'
+[2026-05-11 17:28:13] [WARNING] Execution Failed (Code 1). Error: Checkpoint-Computer : Access denied 
+At line:1 char:1
++ Checkpoint-Computer -Description 'Before UI Customization Changes' -R ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidOperation: (:) [Checkpoint-Computer], ManagementException
+    + FullyQualifiedErrorId : GetWMIManagementException,Microsoft.PowerShell.Commands.CheckpointComputerCommand
+ 
+
+[2026-05-11 17:49:10] [INFO] Application Started
+[2026-05-11 17:50:04] [INFO] Executing PowerShell: (Get-Service -Name 'wuauserv' -ErrorAction SilentlyContinue).Status
+[2026-05-11 17:50:04] [INFO] Execution Successful. Output: Stopped
+
+[2026-05-11 17:50:04] [INFO] Executing PowerShell: (Get-Service -Name 'DoSvc' -ErrorAction SilentlyContinue).Status
+[2026-05-11 17:50:04] [INFO] Execution Successful. Output: Running
+
+[2026-05-11 17:51:25] [INFO] Creating System Restore Point: Before UI Customization
+[2026-05-11 17:51:25] [INFO] Executing PowerShell: Checkpoint-Computer -Description 'Before UI Customization' -RestorePointType 'MODIFY_SETTINGS'
+[2026-05-11 17:51:26] [WARNING] Execution Failed (Code 1). Error: Checkpoint-Computer : Access denied 
+At line:1 char:1
++ Checkpoint-Computer -Description 'Before UI Customization' -RestorePo ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidOperation: (:) [Checkpoint-Computer], ManagementException
+    + FullyQualifiedErrorId : GetWMIManagementException,Microsoft.PowerShell.Commands.CheckpointComputerCommand
+ 
+
+[2026-05-11 18:24:40] [INFO] Application Started
+[2026-05-11 18:41:29] [INFO] Application Started
+[2026-05-11 18:41:40] [INFO] PS Execute: (Get-Service -Name 'wuauserv' -ErrorAction SilentlyContinue).Status
+[2026-05-11 18:41:40] [INFO] PS OK (exit 0). Output: Stopped
+[2026-05-11 18:41:40] [INFO] PS Execute: (Get-Service -Name 'DoSvc' -ErrorAction SilentlyContinue).Status
+[2026-05-11 18:41:40] [INFO] PS OK (exit 0). Output: Running
+[2026-05-11 18:42:39] [INFO] Restore point requested: Before UI Customization
+[2026-05-11 18:42:39] [INFO] PS Execute: Stop-Process -Name explorer -Force
+[2026-05-11 18:42:39] [INFO] PS Execute: Checkpoint-Computer -Description 'Before UI Customization' -RestorePointType 'MODIFY_SETTINGS' -ErrorAction SilentlyContinue
+[2026-05-11 18:42:39] [INFO] PS OK (exit 0). Output: 
+[2026-05-11 18:42:40] [WARNING] PS Failed (exit 1). Error: 
+[2026-05-11 18:42:40] [WARNING] Restore point skipped/failed (Windows may limit frequency): 
+[2026-05-11 18:42:45] [INFO] Restore point requested: Before UI Customization
+[2026-05-11 18:42:45] [INFO] PS Execute: Checkpoint-Computer -Description 'Before UI Customization' -RestorePointType 'MODIFY_SETTINGS' -ErrorAction SilentlyContinue
+[2026-05-11 18:42:45] [INFO] PS Execute: Stop-Process -Name explorer -Force
+[2026-05-11 18:42:45] [INFO] PS OK (exit 0). Output: 
+[2026-05-11 18:42:46] [WARNING] PS Failed (exit 1). Error: 
+[2026-05-11 18:42:46] [WARNING] Restore point skipped/failed (Windows may limit frequency): 
+[2026-05-11 18:42:53] [INFO] Restore point requested: Before UI Customization
+[2026-05-11 18:42:53] [INFO] PS Execute: Checkpoint-Computer -Description 'Before UI Customization' -RestorePointType 'MODIFY_SETTINGS' -ErrorAction SilentlyContinue
+[2026-05-11 18:42:53] [INFO] PS Execute: Set-ItemProperty -Path 'HKCU:\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced' -Name 'TaskbarDa' -Value 0
+[2026-05-11 18:42:53] [WARNING] PS Failed (exit 1). Error: Set-ItemProperty : Attempted to perform an unauthorized operation.
+At line:1 char:1
++ Set-ItemProperty -Path 'HKCU:\Software\Microsoft\Windows\CurrentVersi ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : PermissionDenied: (TaskbarDa:String) [Set-ItemProperty], UnauthorizedAccessException
+    + FullyQualifiedErrorId : System.UnauthorizedAccessException,Microsoft.PowerShell.Commands.SetItemPropertyCommand
+[2026-05-11 18:42:53] [INFO] PS Execute: Stop-Process -Name explorer -Force
+[2026-05-11 18:42:53] [INFO] PS OK (exit 0). Output: 
+[2026-05-11 18:42:54] [WARNING] PS Failed (exit 1). Error: 
+[2026-05-11 18:42:54] [WARNING] Restore point skipped/failed (Windows may limit frequency): 
+[2026-05-11 18:42:58] [INFO] Restore point requested: Before UI Customization
+[2026-05-11 18:42:58] [INFO] PS Execute: Checkpoint-Computer -Description 'Before UI Customization' -RestorePointType 'MODIFY_SETTINGS' -ErrorAction SilentlyContinue
+[2026-05-11 18:42:58] [INFO] PS OK (exit 0). Output: 
+[2026-05-11 18:42:59] [WARNING] PS Failed (exit 1). Error: 
+[2026-05-11 18:42:59] [WARNING] Restore point skipped/failed (Windows may limit frequency): 
+[2026-05-11 18:43:02] [INFO] PS Execute: (Get-Service -Name 'wuauserv' -ErrorAction SilentlyContinue).Status
+[2026-05-11 18:43:02] [INFO] PS OK (exit 0). Output: Stopped
+[2026-05-11 18:43:02] [INFO] PS Execute: (Get-Service -Name 'DoSvc' -ErrorAction SilentlyContinue).Status
+[2026-05-11 18:43:03] [INFO] PS OK (exit 0). Output: Running
+[2026-05-11 18:43:32] [INFO] PS Execute: (Get-Service -Name 'wuauserv' -ErrorAction SilentlyContinue).Status
+[2026-05-11 18:43:33] [INFO] PS OK (exit 0). Output: Stopped
+[2026-05-11 18:43:33] [INFO] PS Execute: (Get-Service -Name 'DoSvc' -ErrorAction SilentlyContinue).Status
+[2026-05-11 18:43:33] [INFO] PS OK (exit 0). Output: Running
+[2026-05-11 18:44:01] [INFO] Restore point requested: Before Power & Sleep Changes
+[2026-05-11 18:44:01] [INFO] PS Execute: Checkpoint-Computer -Description 'Before Power & Sleep Changes' -RestorePointType 'MODIFY_SETTINGS' -ErrorAction SilentlyContinue
+[2026-05-11 18:44:02] [WARNING] PS Failed (exit 1). Error: 
+[2026-05-11 18:44:02] [WARNING] Restore point skipped/failed (Windows may limit frequency): 
+[2026-05-11 18:49:16] [INFO] Restore point requested: Before UI Customization
+[2026-05-11 18:49:16] [INFO] PS Execute: Checkpoint-Computer -Description 'Before UI Customization' -RestorePointType 'MODIFY_SETTINGS' -ErrorAction SilentlyContinue
+[2026-05-11 18:49:16] [INFO] PS Execute: Stop-Process -Name explorer -Force
+[2026-05-11 18:49:16] [INFO] PS OK (exit 0). Output: 
+[2026-05-11 18:49:17] [WARNING] PS Failed (exit 1). Error: 
+[2026-05-11 18:49:17] [WARNING] Restore point skipped/failed (Windows may limit frequency): 
+[2026-05-11 18:49:22] [INFO] Restore point requested: Before UI Customization
+[2026-05-11 18:49:22] [INFO] PS Execute: Checkpoint-Computer -Description 'Before UI Customization' -RestorePointType 'MODIFY_SETTINGS' -ErrorAction SilentlyContinue
+[2026-05-11 18:49:22] [INFO] PS Execute: Stop-Process -Name explorer -Force
+[2026-05-11 18:49:22] [INFO] PS OK (exit 0). Output: 
+[2026-05-11 18:49:23] [WARNING] PS Failed (exit 1). Error: 
+[2026-05-11 18:49:23] [WARNING] Restore point skipped/failed (Windows may limit frequency): 
+[2026-05-11 18:49:32] [INFO] Restore point requested: Before UI Customization
+[2026-05-11 18:49:32] [INFO] PS Execute: Checkpoint-Computer -Description 'Before UI Customization' -RestorePointType 'MODIFY_SETTINGS' -ErrorAction SilentlyContinue
+[2026-05-11 18:49:32] [INFO] PS Execute: Set-ItemProperty -Path 'HKCU:\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced' -Name 'ShowTaskViewButton' -Value 0
+[2026-05-11 18:49:32] [INFO] PS OK (exit 0). Output: 
+[2026-05-11 18:49:32] [INFO] PS Execute: Stop-Process -Name explorer -Force
+[2026-05-11 18:49:33] [INFO] PS OK (exit 0). Output: 
+[2026-05-11 18:49:34] [WARNING] PS Failed (exit 1). Error: 
+[2026-05-11 18:49:34] [WARNING] Restore point skipped/failed (Windows may limit frequency): 
+[2026-05-11 18:49:38] [INFO] Restore point requested: Before UI Customization
+[2026-05-11 18:49:38] [INFO] PS Execute: Stop-Process -Name explorer -Force
+[2026-05-11 18:49:38] [INFO] PS Execute: Checkpoint-Computer -Description 'Before UI Customization' -RestorePointType 'MODIFY_SETTINGS' -ErrorAction SilentlyContinue
+[2026-05-11 18:49:39] [INFO] PS OK (exit 0). Output: 
+[2026-05-11 18:49:40] [WARNING] PS Failed (exit 1). Error: 
+[2026-05-11 18:49:40] [WARNING] Restore point skipped/failed (Windows may limit frequency): 
+[2026-05-11 18:50:35] [INFO] Restore point requested: Before UI Customization
+[2026-05-11 18:50:35] [INFO] PS Execute: Checkpoint-Computer -Description 'Before UI Customization' -RestorePointType 'MODIFY_SETTINGS' -ErrorAction SilentlyContinue
+[2026-05-11 18:50:35] [INFO] PS Execute: Set-ItemProperty -Path 'HKCU:\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced' -Name 'TaskbarAl' -Value 0
+[2026-05-11 18:50:35] [INFO] PS OK (exit 0). Output: 
+[2026-05-11 18:50:35] [INFO] PS Execute: Stop-Process -Name explorer -Force
+[2026-05-11 18:50:35] [INFO] PS OK (exit 0). Output: 
+[2026-05-11 18:50:36] [WARNING] PS Failed (exit 1). Error: 
+[2026-05-11 18:50:36] [WARNING] Restore point skipped/failed (Windows may limit frequency): 
+[2026-05-11 18:56:23] [INFO] Restore point requested: Before System Performance Changes
+[2026-05-11 18:56:23] [INFO] PS Execute: Checkpoint-Computer -Description 'Before System Performance Changes' -RestorePointType 'MODIFY_SETTINGS' -ErrorAction SilentlyContinue
+[2026-05-11 18:56:24] [WARNING] PS Failed (exit 1). Error: 
+[2026-05-11 18:56:24] [WARNING] Restore point skipped/failed (Windows may limit frequency): 
+[2026-05-11 18:56:35] [INFO] Restore point requested: Before System Performance Changes
+[2026-05-11 18:56:35] [INFO] PS Execute: Checkpoint-Computer -Description 'Before System Performance Changes' -RestorePointType 'MODIFY_SETTINGS' -ErrorAction SilentlyContinue
+[2026-05-11 18:56:36] [WARNING] PS Failed (exit 1). Error: 
+[2026-05-11 18:56:36] [WARNING] Restore point skipped/failed (Windows may limit frequency): 
+[2026-05-11 18:57:06] [INFO] Restore point requested: Before System Performance Changes
+[2026-05-11 18:57:06] [INFO] PS Execute: Checkpoint-Computer -Description 'Before System Performance Changes' -RestorePointType 'MODIFY_SETTINGS' -ErrorAction SilentlyContinue
+[2026-05-11 18:57:08] [WARNING] PS Failed (exit 1). Error: 
+[2026-05-11 18:57:08] [WARNING] Restore point skipped/failed (Windows may limit frequency): 
+[2026-05-11 18:58:59] [INFO] Restore point requested: Before Power & Sleep Changes
+[2026-05-11 18:58:59] [INFO] PS Execute: Checkpoint-Computer -Description 'Before Power & Sleep Changes' -RestorePointType 'MODIFY_SETTINGS' -ErrorAction SilentlyContinue
+[2026-05-11 18:58:59] [INFO] PS Execute: powercfg -x -standby-timeout-ac 0
+[2026-05-11 18:58:59] [INFO] PS OK (exit 0). Output: 
+[2026-05-11 18:58:59] [INFO] PS Execute: powercfg -x -standby-timeout-dc 0
+[2026-05-11 18:59:00] [INFO] PS OK (exit 0). Output: 
+[2026-05-11 18:59:01] [WARNING] PS Failed (exit 1). Error: 
+[2026-05-11 18:59:01] [WARNING] Restore point skipped/failed (Windows may limit frequency): 
+[2026-05-11 18:59:20] [INFO] Restore point requested: Before Power & Sleep Changes
+[2026-05-11 18:59:20] [INFO] PS Execute: powercfg -x -standby-timeout-ac 0
+[2026-05-11 18:59:20] [INFO] PS OK (exit 0). Output: 
+[2026-05-11 18:59:20] [INFO] PS Execute: powercfg -x -standby-timeout-dc 0
+[2026-05-11 18:59:20] [INFO] PS OK (exit 0). Output: 
+[2026-05-11 18:59:21] [WARNING] PS Failed (exit 1). Error: 
+[2026-05-11 18:59:21] [WARNING] Restore point skipped/failed (Windows may limit frequency): 
+[2026-05-11 18:59:40] [INFO] Restore point requested: Before Power & Sleep Changes
+[2026-05-11 18:59:40] [INFO] PS Execute: powercfg -x -standby-timeout-ac 0
+[2026-05-11 18:59:40] [INFO] PS Execute: Checkpoint-Computer -Description 'Before Power & Sleep Changes' -RestorePointType 'MODIFY_SETTINGS' -ErrorAction SilentlyContinue
+[2026-05-11 18:59:40] [INFO] PS OK (exit 0). Output: 
+[2026-05-11 18:59:40] [INFO] PS Execute: powercfg -x -standby-timeout-dc 0
+[2026-05-11 18:59:40] [INFO] PS OK (exit 0). Output: 
+[2026-05-11 18:59:41] [WARNING] PS Failed (exit 1). Error: 
+[2026-05-11 18:59:41] [WARNING] Restore point skipped/failed (Windows may limit frequency): 
+[2026-05-11 18:59:47] [INFO] Restore point requested: Before Power & Sleep Changes
+[2026-05-11 18:59:47] [INFO] PS Execute: Checkpoint-Computer -Description 'Before Power & Sleep Changes' -RestorePointType 'MODIFY_SETTINGS' -ErrorAction SilentlyContinue
+[2026-05-11 18:59:48] [WARNING] PS Failed (exit 1). Error: 
+[2026-05-11 18:59:48] [WARNING] Restore point skipped/failed (Windows may limit frequency): 
+[2026-05-11 19:00:30] [INFO] PS Execute: (Get-Service -Name 'wuauserv' -ErrorAction SilentlyContinue).Status
+[2026-05-11 19:00:31] [INFO] PS OK (exit 0). Output: Stopped
+[2026-05-11 19:00:31] [INFO] PS Execute: (Get-Service -Name 'DoSvc' -ErrorAction SilentlyContinue).Status
+[2026-05-11 19:00:31] [INFO] PS OK (exit 0). Output: Running
+[2026-05-11 19:00:36] [INFO] PS Execute: (Get-Service -Name 'wuauserv' -ErrorAction SilentlyContinue).Status
+[2026-05-11 19:00:36] [INFO] PS OK (exit 0). Output: Stopped
+[2026-05-11 19:00:36] [INFO] PS Execute: (Get-Service -Name 'DoSvc' -ErrorAction SilentlyContinue).Status
+[2026-05-11 19:00:36] [INFO] PS OK (exit 0). Output: Running
+[2026-05-11 19:01:06] [INFO] Restore point requested: Before Startup Cleanup
+[2026-05-11 19:01:06] [INFO] PS Execute: Checkpoint-Computer -Description 'Before Startup Cleanup' -RestorePointType 'MODIFY_SETTINGS' -ErrorAction SilentlyContinue
+[2026-05-11 19:01:06] [INFO] PS Execute: Stop-Service bthserv -Force -ErrorAction SilentlyContinue; Set-Service bthserv -StartupType Disabled -ErrorAction SilentlyContinue
+[2026-05-11 19:01:06] [WARNING] PS Failed (exit 1). Error: 
+[2026-05-11 19:01:06] [ERROR] Error during startup cleanup | Exception: Failed to disable Bluetooth: 
+[2026-05-11 19:01:07] [WARNING] PS Failed (exit 1). Error: 
+[2026-05-11 19:01:07] [WARNING] Restore point skipped/failed (Windows may limit frequency): 
+[2026-05-11 19:01:11] [INFO] Restore point requested: Before Startup Cleanup
+[2026-05-11 19:01:11] [INFO] PS Execute: Checkpoint-Computer -Description 'Before Startup Cleanup' -RestorePointType 'MODIFY_SETTINGS' -ErrorAction SilentlyContinue
+[2026-05-11 19:01:12] [WARNING] PS Failed (exit 1). Error: 
+[2026-05-11 19:01:12] [WARNING] Restore point skipped/failed (Windows may limit frequency): 
+[2026-05-11 19:01:15] [INFO] Restore point requested: Before Startup Cleanup
+[2026-05-11 19:01:15] [INFO] PS Execute: Checkpoint-Computer -Description 'Before Startup Cleanup' -RestorePointType 'MODIFY_SETTINGS' -ErrorAction SilentlyContinue
+[2026-05-11 19:01:15] [WARNING] PS Failed (exit 1). Error: 
+[2026-05-11 19:01:15] [ERROR] Error during startup cleanup | Exception: Failed to disable Bluetooth: 
+[2026-05-11 19:01:16] [WARNING] PS Failed (exit 1). Error: 
+[2026-05-11 19:01:16] [WARNING] Restore point skipped/failed (Windows may limit frequency): 
+[2026-05-11 19:01:36] [INFO] Restore point requested: Before Storage Changes
+[2026-05-11 19:01:36] [INFO] PS Execute: Checkpoint-Computer -Description 'Before Storage Changes' -RestorePointType 'MODIFY_SETTINGS' -ErrorAction SilentlyContinue
+[2026-05-11 19:01:37] [WARNING] PS Failed (exit 1). Error: 
+[2026-05-11 19:01:37] [WARNING] Restore point skipped/failed (Windows may limit frequency): 
+[2026-05-11 19:03:20] [INFO] Restore point requested: Before UI Customization
+[2026-05-11 19:03:20] [INFO] PS Execute: Checkpoint-Computer -Description 'Before UI Customization' -RestorePointType 'MODIFY_SETTINGS' -ErrorAction SilentlyContinue
+[2026-05-11 19:03:20] [INFO] PS Execute: Set-ItemProperty -Path 'HKCU:\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced' -Name 'TaskbarAl' -Value 0
+[2026-05-11 19:03:20] [INFO] PS OK (exit 0). Output: 
+[2026-05-11 19:03:20] [INFO] PS Execute: Stop-Process -Name explorer -Force
+[2026-05-11 19:03:20] [INFO] PS OK (exit 0). Output: 
+[2026-05-11 19:03:21] [WARNING] PS Failed (exit 1). Error: 
+[2026-05-11 19:03:21] [WARNING] Restore point skipped/failed (Windows may limit frequency): 
+[2026-05-11 19:03:35] [INFO] Restore point requested: Before Startup Cleanup
+[2026-05-11 19:03:35] [INFO] PS Execute: Checkpoint-Computer -Description 'Before Startup Cleanup' -RestorePointType 'MODIFY_SETTINGS' -ErrorAction SilentlyContinue
+[2026-05-11 19:03:35] [WARNING] PS Failed (exit 1). Error: 
+[2026-05-11 19:03:35] [ERROR] Error during startup cleanup | Exception: Failed to disable Bluetooth: 
+[2026-05-11 19:03:36] [WARNING] PS Failed (exit 1). Error: 
+[2026-05-11 19:03:36] [WARNING] Restore point skipped/failed (Windows may limit frequency): 

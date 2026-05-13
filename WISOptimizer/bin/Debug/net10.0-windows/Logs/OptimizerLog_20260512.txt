@@ -1,0 +1,12 @@
+[2026-05-12 10:32:02] [INFO] Application Started
+[2026-05-12 10:32:42] [INFO] PS Execute: (Get-Service -Name 'wuauserv' -ErrorAction SilentlyContinue).Status
+[2026-05-12 10:32:42] [INFO] PS OK (exit 0). Output: Stopped
+[2026-05-12 10:32:42] [INFO] PS Execute: (Get-Service -Name 'DoSvc' -ErrorAction SilentlyContinue).Status
+[2026-05-12 10:32:42] [INFO] PS OK (exit 0). Output: Running
+[2026-05-12 12:38:25] [INFO] Restore point requested: Before Startup Cleanup
+[2026-05-12 12:38:25] [INFO] PS Execute: Stop-Service bthserv -Force -ErrorAction SilentlyContinue; Set-Service bthserv -StartupType Disabled -ErrorAction SilentlyContinue
+[2026-05-12 12:38:25] [WARNING] PS Failed (exit 1). Error: 
+[2026-05-12 12:38:25] [ERROR] Error during startup cleanup | Exception: Failed to disable Bluetooth: 
+[2026-05-12 12:38:26] [WARNING] PS Failed (exit 1). Error: 
+[2026-05-12 12:38:26] [WARNING] Restore point skipped/failed (Windows may limit frequency): 
+[2026-05-12 12:43:39] [INFO] Config exported by user.

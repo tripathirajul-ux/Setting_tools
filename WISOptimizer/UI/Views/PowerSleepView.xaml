@@ -1,0 +1,76 @@
+<UserControl x:Class="WISOptimizer.UI.Views.PowerSleepView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             Foreground="{StaticResource TextBrush}">
+    <Grid Margin="10">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <StackPanel Margin="0,0,0,20">
+            <TextBlock Text="Power &amp; Sleep Management" FontSize="28" FontWeight="Bold"/>
+            <TextBlock Text="Configure performance plans and prevent system sleep during operations." Foreground="{StaticResource SecondaryTextBrush}" FontSize="14"/>
+        </StackPanel>
+
+        <ScrollViewer Grid.Row="1" VerticalScrollBarVisibility="Auto">
+            <StackPanel Margin="0,0,10,0">
+                <GroupBox Header="Performance Profiles">
+                    <StackPanel>
+                        <DockPanel Margin="0,5">
+                            <TextBlock Text="High Performance Mode" VerticalAlignment="Center"/>
+                            <CheckBox x:Name="chkHighPerf" Style="{StaticResource ToggleSwitch}" DockPanel.Dock="Right" HorizontalAlignment="Right"/>
+                            <TextBlock x:Name="statusPowerPlan" Text="✔ Active" Foreground="{StaticResource SuccessBrush}" DockPanel.Dock="Right" Margin="0,0,15,0" VerticalAlignment="Center" FontSize="12"/>
+                        </DockPanel>
+                        <Separator Background="{StaticResource BorderBrush}" Margin="0,10"/>
+                        <DockPanel Margin="0,5">
+                            <TextBlock Text="Ultimate Performance Mode" VerticalAlignment="Center"/>
+                            <CheckBox x:Name="chkUltimatePerformance" Style="{StaticResource ToggleSwitch}" DockPanel.Dock="Right" HorizontalAlignment="Right"/>
+                        </DockPanel>
+                        <Separator Background="{StaticResource BorderBrush}" Margin="0,10"/>
+                        
+                        <Grid Margin="0,5">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="Auto"/>
+                            </Grid.ColumnDefinitions>
+                            <TextBlock Text="CPU Min/Max State" VerticalAlignment="Center"/>
+                            <StackPanel Grid.Column="1" Orientation="Horizontal">
+                                <TextBox x:Name="txtCpuMin" Width="40" Text="100" Margin="5,0" VerticalContentAlignment="Center"/>
+                                <TextBlock Text="/" VerticalAlignment="Center"/>
+                                <TextBox x:Name="txtCpuMax" Width="40" Text="100" Margin="5,0" VerticalContentAlignment="Center"/>
+                                <TextBlock Text="%" VerticalAlignment="Center"/>
+                            </StackPanel>
+                        </Grid>
+                    </StackPanel>
+                </GroupBox>
+
+                <GroupBox Header="Sleep &amp; Timeouts">
+                    <StackPanel>
+                        <DockPanel Margin="0,5">
+                            <TextBlock Text="Disable system sleep" VerticalAlignment="Center"/>
+                            <CheckBox x:Name="chkDisableSleep" Style="{StaticResource ToggleSwitch}" DockPanel.Dock="Right" HorizontalAlignment="Right"/>
+                        </DockPanel>
+                        <Separator Background="{StaticResource BorderBrush}" Margin="0,10"/>
+
+                        <DockPanel Margin="0,5">
+                            <TextBlock Text="Disable hibernate" VerticalAlignment="Center"/>
+                            <CheckBox x:Name="chkDisableHibernate" Style="{StaticResource ToggleSwitch}" DockPanel.Dock="Right" HorizontalAlignment="Right"/>
+                        </DockPanel>
+                        <Separator Background="{StaticResource BorderBrush}" Margin="0,10"/>
+
+                        <DockPanel Margin="0,5">
+                            <TextBlock Text="Disable display timeout" VerticalAlignment="Center"/>
+                            <CheckBox x:Name="chkDisableDisplay" Style="{StaticResource ToggleSwitch}" DockPanel.Dock="Right" HorizontalAlignment="Right"/>
+                        </DockPanel>
+                    </StackPanel>
+                </GroupBox>
+            </StackPanel>
+        </ScrollViewer>
+
+        <StackPanel Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Right" Margin="0,20,0,0">
+            <Button Content="Update Power Settings" Style="{StaticResource ModernButton}" Click="Apply_Click"/>
+        </StackPanel>
+    </Grid>
+</UserControl>

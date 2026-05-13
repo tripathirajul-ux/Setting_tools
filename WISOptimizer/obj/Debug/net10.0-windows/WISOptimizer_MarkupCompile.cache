@@ -1,0 +1,20 @@
+﻿WISOptimizer
+
+
+winexe
+C#
+.cs
+C:\Users\RajulTripathiLM\OneDrive - Lohia Mechatronik\Desktop\Projects\Settings_tool\WISOptimizer\obj\Debug\net10.0-windows\
+WISOptimizer
+none
+false
+TRACE;DEBUG;NET;NET10_0;NETCOREAPP;WINDOWS;WINDOWS7_0;NET5_0_OR_GREATER;NET6_0_OR_GREATER;NET7_0_OR_GREATER;NET8_0_OR_GREATER;NET9_0_OR_GREATER;NET10_0_OR_GREATER;NETCOREAPP3_0_OR_GREATER;NETCOREAPP3_1_OR_GREATER;WINDOWS7_0_OR_GREATER
+C:\Users\RajulTripathiLM\OneDrive - Lohia Mechatronik\Desktop\Projects\Settings_tool\WISOptimizer\App.xaml
+121671790855
+
+23118928959
+206-796764840
+MainWindow.xaml;UI\Views\ConfigurationPanel.xaml;UI\Views\LoggingMonitoringView.xaml;UI\Views\NetworkView.xaml;UI\Views\PowerSleepView.xaml;UI\Views\RecoveryWatchdogView.xaml;UI\Views\SecurityView.xaml;UI\Views\StartupServicesView.xaml;UI\Views\StorageView.xaml;UI\Views\SystemPerformanceView.xaml;UI\Views\TaskbarCustomizationView.xaml;UI\Views\WindowsUpdateView.xaml;
+
+False
+

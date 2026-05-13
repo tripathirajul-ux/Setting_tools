@@ -1,0 +1,48 @@
+<UserControl x:Class="WISOptimizer.UI.Views.RecoveryWatchdogView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             Foreground="{StaticResource TextBrush}">
+    <Grid Margin="10">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <StackPanel Margin="0,0,0,20">
+            <TextBlock Text="Recovery &amp; Watchdog" FontSize="28" FontWeight="Bold"/>
+            <TextBlock Text="Prevent auto-restarts and configure service watchdog behavior." Foreground="{StaticResource SecondaryTextBrush}" FontSize="14"/>
+        </StackPanel>
+
+        <ScrollViewer Grid.Row="1" VerticalScrollBarVisibility="Auto">
+            <StackPanel Margin="0,0,10,0">
+                <GroupBox Header="Crash Recovery">
+                    <StackPanel>
+                        <DockPanel Margin="0,5">
+                            <TextBlock Text="Disable auto restart on BSOD" VerticalAlignment="Center"/>
+                            <CheckBox x:Name="chkDisableAutoRestart" Style="{StaticResource ToggleSwitch}" DockPanel.Dock="Right" HorizontalAlignment="Right"/>
+                        </DockPanel>
+                    </StackPanel>
+                </GroupBox>
+
+                <GroupBox Header="Watchdog">
+                    <StackPanel>
+                        <DockPanel Margin="0,5">
+                            <TextBlock Text="Enable application watchdog" VerticalAlignment="Center"/>
+                            <CheckBox x:Name="chkEnableWatchdog" Style="{StaticResource ToggleSwitch}" DockPanel.Dock="Right" HorizontalAlignment="Right"/>
+                        </DockPanel>
+                        <Separator Background="{StaticResource BorderBrush}" Margin="0,8"/>
+                        <DockPanel Margin="0,5">
+                            <TextBlock Text="Restart failed critical services" VerticalAlignment="Center"/>
+                            <CheckBox x:Name="chkRestartFailedServices" Style="{StaticResource ToggleSwitch}" DockPanel.Dock="Right" HorizontalAlignment="Right"/>
+                        </DockPanel>
+                    </StackPanel>
+                </GroupBox>
+            </StackPanel>
+        </ScrollViewer>
+
+        <StackPanel Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Right" Margin="0,20,0,0">
+            <Button Content="Apply Recovery Settings" Style="{StaticResource ModernButton}" Click="Apply_Click"/>
+        </StackPanel>
+    </Grid>
+</UserControl>

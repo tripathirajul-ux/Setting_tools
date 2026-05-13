@@ -1,0 +1,20 @@
+{
+  "network": {
+    "ip": "192.168.1.20",
+    "gateway": "192.168.1.1",
+    "dns": "8.8.8.8"
+  },
+  "camera": {
+    "sdk_port": 5000
+  },
+  "logging": {
+    "path": "C:\\WISOptimizer\\Logs"
+  },
+  "storage": {
+    "min_free_space_gb": 10
+  },
+  "uninstall": {
+    "one_drive_setup_path": "%SystemRoot%\\SysWOW64\\OneDriveSetup.exe",
+    "teams_machine_wide_installer_path": "%ProgramFiles(x86)%\\Teams Installer\\Teams.exe"
+  }
+}

@@ -1,0 +1,86 @@
+C:\Users\LOHIA\Desktop\Settings_tool\WISOptimizer\obj\Debug\net10.0-windows\MainWindow.baml
+C:\Users\LOHIA\Desktop\Settings_tool\WISOptimizer\obj\Debug\net10.0-windows\UI\Views\ConfigurationPanel.baml
+C:\Users\LOHIA\Desktop\Settings_tool\WISOptimizer\obj\Debug\net10.0-windows\UI\Views\LoggingMonitoringView.baml
+C:\Users\LOHIA\Desktop\Settings_tool\WISOptimizer\obj\Debug\net10.0-windows\UI\Views\NetworkView.baml
+C:\Users\LOHIA\Desktop\Settings_tool\WISOptimizer\obj\Debug\net10.0-windows\UI\Views\PowerSleepView.baml
+C:\Users\LOHIA\Desktop\Settings_tool\WISOptimizer\obj\Debug\net10.0-windows\UI\Views\RecoveryWatchdogView.baml
+C:\Users\LOHIA\Desktop\Settings_tool\WISOptimizer\obj\Debug\net10.0-windows\UI\Views\SecurityView.baml
+C:\Users\LOHIA\Desktop\Settings_tool\WISOptimizer\obj\Debug\net10.0-windows\UI\Views\StartupServicesView.baml
+C:\Users\LOHIA\Desktop\Settings_tool\WISOptimizer\obj\Debug\net10.0-windows\UI\Views\StorageView.baml
+C:\Users\LOHIA\Desktop\Settings_tool\WISOptimizer\obj\Debug\net10.0-windows\UI\Views\SystemPerformanceView.baml
+C:\Users\LOHIA\Desktop\Settings_tool\WISOptimizer\obj\Debug\net10.0-windows\UI\Views\TaskbarCustomizationView.baml
+C:\Users\LOHIA\Desktop\Settings_tool\WISOptimizer\obj\Debug\net10.0-windows\UI\Views\WindowsUpdateView.baml
+C:\Users\LOHIA\Desktop\Settings_tool\WISOptimizer\obj\Debug\net10.0-windows\MainWindow.g.cs
+C:\Users\LOHIA\Desktop\Settings_tool\WISOptimizer\obj\Debug\net10.0-windows\UI\Views\ConfigurationPanel.g.cs
+C:\Users\LOHIA\Desktop\Settings_tool\WISOptimizer\obj\Debug\net10.0-windows\UI\Views\LoggingMonitoringView.g.cs
+C:\Users\LOHIA\Desktop\Settings_tool\WISOptimizer\obj\Debug\net10.0-windows\UI\Views\NetworkView.g.cs
+C:\Users\LOHIA\Desktop\Settings_tool\WISOptimizer\obj\Debug\net10.0-windows\UI\Views\PowerSleepView.g.cs
+C:\Users\LOHIA\Desktop\Settings_tool\WISOptimizer\obj\Debug\net10.0-windows\UI\Views\RecoveryWatchdogView.g.cs
+C:\Users\LOHIA\Desktop\Settings_tool\WISOptimizer\obj\Debug\net10.0-windows\UI\Views\SecurityView.g.cs
+C:\Users\LOHIA\Desktop\Settings_tool\WISOptimizer\obj\Debug\net10.0-windows\UI\Views\StartupServicesView.g.cs
+C:\Users\LOHIA\Desktop\Settings_tool\WISOptimizer\obj\Debug\net10.0-windows\UI\Views\StorageView.g.cs
+C:\Users\LOHIA\Desktop\Settings_tool\WISOptimizer\obj\Debug\net10.0-windows\UI\Views\SystemPerformanceView.g.cs
+C:\Users\LOHIA\Desktop\Settings_tool\WISOptimizer\obj\Debug\net10.0-windows\UI\Views\TaskbarCustomizationView.g.cs
+C:\Users\LOHIA\Desktop\Settings_tool\WISOptimizer\obj\Debug\net10.0-windows\UI\Views\WindowsUpdateView.g.cs
+C:\Users\LOHIA\Desktop\Settings_tool\WISOptimizer\obj\Debug\net10.0-windows\App.g.cs
+C:\Users\LOHIA\Desktop\Settings_tool\WISOptimizer\obj\Debug\net10.0-windows\WISOptimizer_MarkupCompile.cache
+C:\Users\LOHIA\Desktop\Settings_tool\WISOptimizer\obj\Debug\net10.0-windows\WISOptimizer_MarkupCompile.lref
+C:\Users\LOHIA\Desktop\Settings_tool\WISOptimizer\bin\Debug\net10.0-windows\WISOptimizer.exe
+C:\Users\LOHIA\Desktop\Settings_tool\WISOptimizer\bin\Debug\net10.0-windows\WISOptimizer.deps.json
+C:\Users\LOHIA\Desktop\Settings_tool\WISOptimizer\bin\Debug\net10.0-windows\WISOptimizer.runtimeconfig.json
+C:\Users\LOHIA\Desktop\Settings_tool\WISOptimizer\bin\Debug\net10.0-windows\WISOptimizer.dll
+C:\Users\LOHIA\Desktop\Settings_tool\WISOptimizer\bin\Debug\net10.0-windows\WISOptimizer.pdb
+C:\Users\LOHIA\Desktop\Settings_tool\WISOptimizer\obj\Debug\net10.0-windows\App.baml
+C:\Users\LOHIA\Desktop\Settings_tool\WISOptimizer\obj\Debug\net10.0-windows\WISOptimizer.g.resources
+C:\Users\LOHIA\Desktop\Settings_tool\WISOptimizer\obj\Debug\net10.0-windows\WISOptimizer.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\LOHIA\Desktop\Settings_tool\WISOptimizer\obj\Debug\net10.0-windows\WISOptimizer.AssemblyInfoInputs.cache
+C:\Users\LOHIA\Desktop\Settings_tool\WISOptimizer\obj\Debug\net10.0-windows\WISOptimizer.AssemblyInfo.cs
+C:\Users\LOHIA\Desktop\Settings_tool\WISOptimizer\obj\Debug\net10.0-windows\WISOptimizer.csproj.CoreCompileInputs.cache
+C:\Users\LOHIA\Desktop\Settings_tool\WISOptimizer\obj\Debug\net10.0-windows\WISOptimizer.dll
+C:\Users\LOHIA\Desktop\Settings_tool\WISOptimizer\obj\Debug\net10.0-windows\refint\WISOptimizer.dll
+C:\Users\LOHIA\Desktop\Settings_tool\WISOptimizer\obj\Debug\net10.0-windows\WISOptimizer.pdb
+C:\Users\LOHIA\Desktop\Settings_tool\WISOptimizer\obj\Debug\net10.0-windows\WISOptimizer.genruntimeconfig.cache
+C:\Users\LOHIA\Desktop\Settings_tool\WISOptimizer\obj\Debug\net10.0-windows\ref\WISOptimizer.dll
+C:\Users\RajulTripathiLM\OneDrive - Lohia Mechatronik\Desktop\Projects\Settings_tool\WISOptimizer\bin\Debug\net10.0-windows\WISOptimizer.exe
+C:\Users\RajulTripathiLM\OneDrive - Lohia Mechatronik\Desktop\Projects\Settings_tool\WISOptimizer\bin\Debug\net10.0-windows\WISOptimizer.deps.json
+C:\Users\RajulTripathiLM\OneDrive - Lohia Mechatronik\Desktop\Projects\Settings_tool\WISOptimizer\bin\Debug\net10.0-windows\WISOptimizer.runtimeconfig.json
+C:\Users\RajulTripathiLM\OneDrive - Lohia Mechatronik\Desktop\Projects\Settings_tool\WISOptimizer\bin\Debug\net10.0-windows\WISOptimizer.dll
+C:\Users\RajulTripathiLM\OneDrive - Lohia Mechatronik\Desktop\Projects\Settings_tool\WISOptimizer\bin\Debug\net10.0-windows\WISOptimizer.pdb
+C:\Users\RajulTripathiLM\OneDrive - Lohia Mechatronik\Desktop\Projects\Settings_tool\WISOptimizer\obj\Debug\net10.0-windows\MainWindow.baml
+C:\Users\RajulTripathiLM\OneDrive - Lohia Mechatronik\Desktop\Projects\Settings_tool\WISOptimizer\obj\Debug\net10.0-windows\UI\Views\ConfigurationPanel.baml
+C:\Users\RajulTripathiLM\OneDrive - Lohia Mechatronik\Desktop\Projects\Settings_tool\WISOptimizer\obj\Debug\net10.0-windows\UI\Views\LoggingMonitoringView.baml
+C:\Users\RajulTripathiLM\OneDrive - Lohia Mechatronik\Desktop\Projects\Settings_tool\WISOptimizer\obj\Debug\net10.0-windows\UI\Views\NetworkView.baml
+C:\Users\RajulTripathiLM\OneDrive - Lohia Mechatronik\Desktop\Projects\Settings_tool\WISOptimizer\obj\Debug\net10.0-windows\UI\Views\PowerSleepView.baml
+C:\Users\RajulTripathiLM\OneDrive - Lohia Mechatronik\Desktop\Projects\Settings_tool\WISOptimizer\obj\Debug\net10.0-windows\UI\Views\RecoveryWatchdogView.baml
+C:\Users\RajulTripathiLM\OneDrive - Lohia Mechatronik\Desktop\Projects\Settings_tool\WISOptimizer\obj\Debug\net10.0-windows\UI\Views\SecurityView.baml
+C:\Users\RajulTripathiLM\OneDrive - Lohia Mechatronik\Desktop\Projects\Settings_tool\WISOptimizer\obj\Debug\net10.0-windows\UI\Views\StartupServicesView.baml
+C:\Users\RajulTripathiLM\OneDrive - Lohia Mechatronik\Desktop\Projects\Settings_tool\WISOptimizer\obj\Debug\net10.0-windows\UI\Views\StorageView.baml
+C:\Users\RajulTripathiLM\OneDrive - Lohia Mechatronik\Desktop\Projects\Settings_tool\WISOptimizer\obj\Debug\net10.0-windows\UI\Views\SystemPerformanceView.baml
+C:\Users\RajulTripathiLM\OneDrive - Lohia Mechatronik\Desktop\Projects\Settings_tool\WISOptimizer\obj\Debug\net10.0-windows\UI\Views\TaskbarCustomizationView.baml
+C:\Users\RajulTripathiLM\OneDrive - Lohia Mechatronik\Desktop\Projects\Settings_tool\WISOptimizer\obj\Debug\net10.0-windows\UI\Views\WindowsUpdateView.baml
+C:\Users\RajulTripathiLM\OneDrive - Lohia Mechatronik\Desktop\Projects\Settings_tool\WISOptimizer\obj\Debug\net10.0-windows\MainWindow.g.cs
+C:\Users\RajulTripathiLM\OneDrive - Lohia Mechatronik\Desktop\Projects\Settings_tool\WISOptimizer\obj\Debug\net10.0-windows\UI\Views\ConfigurationPanel.g.cs
+C:\Users\RajulTripathiLM\OneDrive - Lohia Mechatronik\Desktop\Projects\Settings_tool\WISOptimizer\obj\Debug\net10.0-windows\UI\Views\LoggingMonitoringView.g.cs
+C:\Users\RajulTripathiLM\OneDrive - Lohia Mechatronik\Desktop\Projects\Settings_tool\WISOptimizer\obj\Debug\net10.0-windows\UI\Views\NetworkView.g.cs
+C:\Users\RajulTripathiLM\OneDrive - Lohia Mechatronik\Desktop\Projects\Settings_tool\WISOptimizer\obj\Debug\net10.0-windows\UI\Views\PowerSleepView.g.cs
+C:\Users\RajulTripathiLM\OneDrive - Lohia Mechatronik\Desktop\Projects\Settings_tool\WISOptimizer\obj\Debug\net10.0-windows\UI\Views\RecoveryWatchdogView.g.cs
+C:\Users\RajulTripathiLM\OneDrive - Lohia Mechatronik\Desktop\Projects\Settings_tool\WISOptimizer\obj\Debug\net10.0-windows\UI\Views\SecurityView.g.cs
+C:\Users\RajulTripathiLM\OneDrive - Lohia Mechatronik\Desktop\Projects\Settings_tool\WISOptimizer\obj\Debug\net10.0-windows\UI\Views\StartupServicesView.g.cs
+C:\Users\RajulTripathiLM\OneDrive - Lohia Mechatronik\Desktop\Projects\Settings_tool\WISOptimizer\obj\Debug\net10.0-windows\UI\Views\StorageView.g.cs
+C:\Users\RajulTripathiLM\OneDrive - Lohia Mechatronik\Desktop\Projects\Settings_tool\WISOptimizer\obj\Debug\net10.0-windows\UI\Views\SystemPerformanceView.g.cs
+C:\Users\RajulTripathiLM\OneDrive - Lohia Mechatronik\Desktop\Projects\Settings_tool\WISOptimizer\obj\Debug\net10.0-windows\UI\Views\TaskbarCustomizationView.g.cs
+C:\Users\RajulTripathiLM\OneDrive - Lohia Mechatronik\Desktop\Projects\Settings_tool\WISOptimizer\obj\Debug\net10.0-windows\UI\Views\WindowsUpdateView.g.cs
+C:\Users\RajulTripathiLM\OneDrive - Lohia Mechatronik\Desktop\Projects\Settings_tool\WISOptimizer\obj\Debug\net10.0-windows\App.g.cs
+C:\Users\RajulTripathiLM\OneDrive - Lohia Mechatronik\Desktop\Projects\Settings_tool\WISOptimizer\obj\Debug\net10.0-windows\WISOptimizer_MarkupCompile.cache
+C:\Users\RajulTripathiLM\OneDrive - Lohia Mechatronik\Desktop\Projects\Settings_tool\WISOptimizer\obj\Debug\net10.0-windows\WISOptimizer_MarkupCompile.lref
+C:\Users\RajulTripathiLM\OneDrive - Lohia Mechatronik\Desktop\Projects\Settings_tool\WISOptimizer\obj\Debug\net10.0-windows\App.baml
+C:\Users\RajulTripathiLM\OneDrive - Lohia Mechatronik\Desktop\Projects\Settings_tool\WISOptimizer\obj\Debug\net10.0-windows\WISOptimizer.g.resources
+C:\Users\RajulTripathiLM\OneDrive - Lohia Mechatronik\Desktop\Projects\Settings_tool\WISOptimizer\obj\Debug\net10.0-windows\WISOptimizer.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\RajulTripathiLM\OneDrive - Lohia Mechatronik\Desktop\Projects\Settings_tool\WISOptimizer\obj\Debug\net10.0-windows\WISOptimizer.AssemblyInfoInputs.cache
+C:\Users\RajulTripathiLM\OneDrive - Lohia Mechatronik\Desktop\Projects\Settings_tool\WISOptimizer\obj\Debug\net10.0-windows\WISOptimizer.AssemblyInfo.cs
+C:\Users\RajulTripathiLM\OneDrive - Lohia Mechatronik\Desktop\Projects\Settings_tool\WISOptimizer\obj\Debug\net10.0-windows\WISOptimizer.csproj.CoreCompileInputs.cache
+C:\Users\RajulTripathiLM\OneDrive - Lohia Mechatronik\Desktop\Projects\Settings_tool\WISOptimizer\obj\Debug\net10.0-windows\WISOptimizer.dll
+C:\Users\RajulTripathiLM\OneDrive - Lohia Mechatronik\Desktop\Projects\Settings_tool\WISOptimizer\obj\Debug\net10.0-windows\refint\WISOptimizer.dll
+C:\Users\RajulTripathiLM\OneDrive - Lohia Mechatronik\Desktop\Projects\Settings_tool\WISOptimizer\obj\Debug\net10.0-windows\WISOptimizer.pdb
+C:\Users\RajulTripathiLM\OneDrive - Lohia Mechatronik\Desktop\Projects\Settings_tool\WISOptimizer\obj\Debug\net10.0-windows\WISOptimizer.genruntimeconfig.cache
+C:\Users\RajulTripathiLM\OneDrive - Lohia Mechatronik\Desktop\Projects\Settings_tool\WISOptimizer\obj\Debug\net10.0-windows\ref\WISOptimizer.dll
