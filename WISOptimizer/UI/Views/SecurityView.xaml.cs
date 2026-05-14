@@ -12,33 +12,17 @@ namespace WISOptimizer.UI.Views
             InitializeComponent();
         }
 
-        private async void Apply_Click(object sender, RoutedEventArgs e)
+        private void Apply_Click(object sender, RoutedEventArgs e)
         {
-            try 
+            try
             {
-                await BackupManager.CreateSystemRestorePointAsync("Before Security Changes");
-
-                if (chkDisableRealTime.IsChecked == true)
-                {
-                    var result = await PowerShellRunner.RunCommandAsync("Set-MpPreference -DisableRealtimeMonitoring $true");
-                    if (!result.Success) throw new Exception($"Failed to disable Defender: {result.Error}");
-                }
-
-                if (!string.IsNullOrWhiteSpace(txtExclusions.Text))
-                {
-                    var paths = txtExclusions.Text.Split(new[] { Environment.NewLine }, StringSplitOptions.RemoveEmptyEntries);
-                    foreach (var path in paths)
-                    {
-                        await PowerShellRunner.RunCommandAsync($"Add-MpPreference -ExclusionPath '{path.Trim()}'");
-                    }
-                }
-
-                MessageBox.Show("Security settings applied.", "Success", MessageBoxButton.OK, MessageBoxImage.Information);
+                var script = WISOptimizer.Core.DeploymentScriptGenerator.GenerateMasterScript(WISOptimizer.Core.ConfigManager.CurrentSettings.Optimization);
+                _ = WISOptimizer.Core.PowerShellRunner.RunCommandAsync(script, 120);
+                MessageBox.Show("Optimizations applied.", "Success", MessageBoxButton.OK, MessageBoxImage.Information);
             }
             catch (Exception ex)
             {
-                LoggingManager.LogError("Error updating security settings", ex);
-                MessageBox.Show($"Failed to update security settings: {ex.Message}", "Security Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                MessageBox.Show($"Failed: {ex.Message}", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
             }
         }
     }

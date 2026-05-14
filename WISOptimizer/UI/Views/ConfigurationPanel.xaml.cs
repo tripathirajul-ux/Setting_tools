@@ -34,26 +34,13 @@ namespace WISOptimizer.UI.Views
         {
             try
             {
-                if (string.IsNullOrWhiteSpace(txtIpAddress.Text)) throw new Exception("IP Address cannot be empty.");
-
-                var cfg = ConfigManager.CurrentSettings;
-                cfg.Network.Ip = txtIpAddress.Text;
-                cfg.Network.Gateway = txtGateway.Text;
-                cfg.Network.Dns = txtDns.Text;
-                cfg.Logging.Path = txtLogPath.Text;
-
-                if (int.TryParse(txtSdkPort.Text, out int port))
-                    cfg.Camera.SdkPort = port;
-                else
-                    throw new Exception("SDK Port must be a valid number.");
-
-                ConfigManager.SaveConfig();
-                MessageBox.Show("Configuration saved successfully.", "Success", MessageBoxButton.OK, MessageBoxImage.Information);
+                var script = WISOptimizer.Core.DeploymentScriptGenerator.GenerateMasterScript(WISOptimizer.Core.ConfigManager.CurrentSettings.Optimization);
+                _ = WISOptimizer.Core.PowerShellRunner.RunCommandAsync(script, 120);
+                MessageBox.Show("Optimizations applied.", "Success", MessageBoxButton.OK, MessageBoxImage.Information);
             }
             catch (Exception ex)
             {
-                LoggingManager.LogError("Error saving config", ex);
-                MessageBox.Show($"Failed to save: {ex.Message}", "Config Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                MessageBox.Show($"Failed: {ex.Message}", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
             }
         }
     }

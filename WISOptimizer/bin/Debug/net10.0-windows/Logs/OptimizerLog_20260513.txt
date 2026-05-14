@@ -492,3 +492,76 @@ PSProvider           : Microsoft.PowerShell.Core\Registry
 [2026-05-13 15:02:14] [WARNING] PS Failed (exit 1). Error: 
 [2026-05-13 15:02:14] [WARNING] Restore point skipped/failed (Windows may limit frequency): 
 [2026-05-13 15:02:23] [INFO] Deployment script generated at C:\Users\RajulTripathiLM\OneDrive - Lohia Mechatronik\Desktop\Projects\Settings_tool\WISOptimizer\bin\Debug\net10.0-windows\Backup\WIS_Deployment_20260513_150218.ps1
+[2026-05-13 15:15:51] [INFO] Restore point requested: Before UI Customization
+[2026-05-13 15:15:51] [INFO] PS Execute: Checkpoint-Computer -Description 'Before UI Customization' -RestorePointType 'MODIFY_SETTINGS' -ErrorAction SilentlyContinue
+[2026-05-13 15:15:51] [INFO] PS Execute: Set-ItemProperty -Path 'HKCU:\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced' -Name 'TaskbarAl' -Value 0
+[2026-05-13 15:15:51] [INFO] PS OK (exit 0). Output: 
+[2026-05-13 15:15:51] [INFO] PS Execute: New-Item -Path 'HKCU:\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced' -Force | Out-Null; New-ItemProperty -Path 'HKCU:\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced' -Name 'TaskbarDa' -PropertyType DWord -Value 0 -Force
+[2026-05-13 15:15:52] [WARNING] PS Failed (exit 1). Error: New-Item : Attempted to perform an unauthorized operation.
+At line:1 char:1
++ New-Item -Path 'HKCU:\Software\Microsoft\Windows\CurrentVersion\Explo ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : PermissionDenied: (HKEY_CURRENT_US...plorer\Advanced:String) [New-Item], UnauthorizedAcc 
+   essException
+    + FullyQualifiedErrorId : System.UnauthorizedAccessException,Microsoft.PowerShell.Commands.NewItemCommand
+ 
+New-ItemProperty : Attempted to perform an unauthorized operation.
+At line:1 char:103
++ ... | Out-Null; New-ItemProperty -Path 'HKCU:\Software\Microsoft\Windows\ ...
++                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : PermissionDenied: (HKEY_CURRENT_US...plorer\Advanced:String) [New-ItemProperty], Unautho 
+   rizedAccessException
+    + FullyQualifiedErrorId : System.UnauthorizedAccessException,Microsoft.PowerShell.Commands.NewItemPropertyCommand
+[2026-05-13 15:15:52] [INFO] PS Execute: Stop-Process -Name Explorer -Force
+[2026-05-13 15:15:52] [INFO] PS OK (exit 0). Output: 
+[2026-05-13 15:15:52] [WARNING] PS Failed (exit 1). Error: 
+[2026-05-13 15:15:52] [WARNING] Restore point skipped/failed (Windows may limit frequency): 
+[2026-05-13 15:16:02] [INFO] Deployment script generated at C:\Users\RajulTripathiLM\OneDrive - Lohia Mechatronik\Desktop\WIS_Deployment_20260513_151555.ps1
+[2026-05-13 15:31:06] [INFO] Config exported by user.
+[2026-05-13 16:24:26] [INFO] Application Started | BUILD_MARKER=DBG_20260513_1332
+[2026-05-13 16:25:36] [INFO] Application Started | BUILD_MARKER=DBG_20260513_1332
+[2026-05-13 16:51:50] [INFO] Restore point requested: Before Startup Cleanup
+[2026-05-13 16:51:50] [INFO] PS Execute: Get-Service bthserv | Set-Service -StartupType Disabled -PassThru | Stop-Service -Force -ErrorAction SilentlyContinue
+[2026-05-13 16:51:50] [INFO] PS Execute: Checkpoint-Computer -Description 'Before Startup Cleanup' -RestorePointType 'MODIFY_SETTINGS' -ErrorAction SilentlyContinue
+[2026-05-13 16:51:50] [WARNING] PS Failed (exit 1). Error: Set-Service : Service 'Bluetooth Support Service (bthserv)' cannot be configured due to the following error: Access is 
+denied
+At line:1 char:23
++ ... Service bthserv | Set-Service -StartupType Disabled -PassThru | Stop- ...
++                       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : PermissionDenied: (System.ServiceProcess.ServiceController:ServiceController) [Set-Servi 
+   ce], ServiceCommandException
+    + FullyQualifiedErrorId : CouldNotSetService,Microsoft.PowerShell.Commands.SetServiceCommand
+[2026-05-13 16:51:51] [WARNING] PS Failed (exit 1). Error: 
+[2026-05-13 16:51:51] [WARNING] Restore point skipped/failed (Windows may limit frequency): 
+[2026-05-13 16:51:57] [INFO] Restore point requested: Before Startup Cleanup
+[2026-05-13 16:51:57] [INFO] PS Execute: Checkpoint-Computer -Description 'Before Startup Cleanup' -RestorePointType 'MODIFY_SETTINGS' -ErrorAction SilentlyContinue
+[2026-05-13 16:51:57] [INFO] PS Execute: 
+                        $path = 'HKCU:\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced';
+                        if (!(Test-Path $path)) { New-Item $path -Force };
+                        Set-ItemProperty -Path $path -Name 'TaskbarDa' -Value 0
+[2026-05-13 16:51:58] [WARNING] PS Failed (exit 1). Error: Set-ItemProperty : Attempted to perform an unauthorized operation.
+At line:4 char:25
++ ...               Set-ItemProperty -Path $path -Name 'TaskbarDa' -Value 0
++                   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : PermissionDenied: (TaskbarDa:String) [Set-ItemProperty], UnauthorizedAccessException
+    + FullyQualifiedErrorId : System.UnauthorizedAccessException,Microsoft.PowerShell.Commands.SetItemPropertyCommand
+[2026-05-13 16:51:58] [WARNING] PS Failed (exit 1). Error: 
+[2026-05-13 16:51:58] [WARNING] Restore point skipped/failed (Windows may limit frequency): 
+[2026-05-13 17:42:32] [INFO] Application Started | BUILD_MARKER=DBG_20260513_1332
+[2026-05-13 17:42:35] [INFO] PS Execute: (Get-Service -Name 'wuauserv' -ErrorAction SilentlyContinue).Status
+[2026-05-13 17:42:35] [INFO] PS OK (exit 0). Output: Stopped
+[2026-05-13 17:42:35] [INFO] PS Execute: (Get-Service -Name 'DoSvc' -ErrorAction SilentlyContinue).Status
+[2026-05-13 17:42:36] [INFO] PS OK (exit 0). Output: Running
+[2026-05-13 17:47:42] [INFO] Application Started | BUILD_MARKER=DBG_20260513_1332
+[2026-05-13 17:48:06] [INFO] PS Execute: (Get-Service -Name 'wuauserv' -ErrorAction SilentlyContinue).Status
+[2026-05-13 17:48:06] [INFO] PS OK (exit 0). Output: Stopped
+[2026-05-13 17:48:06] [INFO] PS Execute: (Get-Service -Name 'DoSvc' -ErrorAction SilentlyContinue).Status
+[2026-05-13 17:48:07] [INFO] PS OK (exit 0). Output: Running
+[2026-05-13 17:48:31] [INFO] PS Execute: (Get-Service -Name 'wuauserv' -ErrorAction SilentlyContinue).Status
+[2026-05-13 17:48:31] [INFO] PS OK (exit 0). Output: Stopped
+[2026-05-13 17:48:31] [INFO] PS Execute: (Get-Service -Name 'DoSvc' -ErrorAction SilentlyContinue).Status
+[2026-05-13 17:48:31] [INFO] PS OK (exit 0). Output: Running
+[2026-05-13 18:05:08] [INFO] PS Execute: (Get-Service -Name 'wuauserv' -ErrorAction SilentlyContinue).Status
+[2026-05-13 18:05:08] [INFO] PS OK (exit 0). Output: Stopped
+[2026-05-13 18:05:08] [INFO] PS Execute: (Get-Service -Name 'DoSvc' -ErrorAction SilentlyContinue).Status
+[2026-05-13 18:05:08] [INFO] PS OK (exit 0). Output: Running

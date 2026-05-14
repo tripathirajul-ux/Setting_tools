@@ -1,7 +1,7 @@
 <UserControl x:Class="WISOptimizer.UI.Views.StorageView"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             Foreground="{StaticResource TextBrush}">
+             Foreground="{DynamicResource TextBrush}">
     <Grid Margin="10">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
@@ -11,7 +11,7 @@
 
         <StackPanel Margin="0,0,0,20">
             <TextBlock Text="Storage &amp; Disk" FontSize="28" FontWeight="Bold"/>
-            <TextBlock Text="Optimize disk performance and monitor free space." Foreground="{StaticResource SecondaryTextBrush}" FontSize="14"/>
+            <TextBlock Text="Optimize disk performance and monitor free space." Foreground="{DynamicResource SecondaryTextBrush}" FontSize="14"/>
         </StackPanel>
 
         <ScrollViewer Grid.Row="1" VerticalScrollBarVisibility="Auto">
@@ -20,13 +20,13 @@
                     <StackPanel>
                         <DockPanel Margin="0,5">
                             <TextBlock Text="Disable Windows indexing" VerticalAlignment="Center"/>
-                            <CheckBox x:Name="chkDisableIndexing" Style="{StaticResource ToggleSwitch}" DockPanel.Dock="Right" HorizontalAlignment="Right"/>
-                            <TextBlock x:Name="statusIndexing" Text="✔ Optimized" Foreground="{StaticResource SuccessBrush}" DockPanel.Dock="Right" Margin="0,0,15,0" VerticalAlignment="Center" FontSize="12"/>
+                            <CheckBox x:Name="chkDisableIndexing" IsChecked="{Binding DisableIndexing}" Style="{StaticResource ToggleSwitch}" DockPanel.Dock="Right" HorizontalAlignment="Right"/>
+                            <TextBlock x:Name="statusIndexing" Text="✔ Optimized" Foreground="{DynamicResource SuccessBrush}" DockPanel.Dock="Right" Margin="0,0,15,0" VerticalAlignment="Center" FontSize="12"/>
                         </DockPanel>
-                        <Separator Background="{StaticResource BorderBrush}" Margin="0,10"/>
+                        <Separator Background="{DynamicResource BorderBrush}" Margin="0,10"/>
                         <DockPanel Margin="0,5">
                             <TextBlock Text="Disable scheduled defrag" VerticalAlignment="Center"/>
-                            <CheckBox x:Name="chkDisableDefrag" Style="{StaticResource ToggleSwitch}" DockPanel.Dock="Right" HorizontalAlignment="Right"/>
+                            <CheckBox x:Name="chkDisableDefrag" IsChecked="{Binding DisableDefrag}" Style="{StaticResource ToggleSwitch}" DockPanel.Dock="Right" HorizontalAlignment="Right"/>
                         </DockPanel>
                     </StackPanel>
                 </GroupBox>
@@ -37,11 +37,11 @@
                             <TextBlock Text="Min Free Space Alert (GB)" VerticalAlignment="Center"/>
                             <TextBox x:Name="txtMinFreeSpace" Width="60" Text="10" DockPanel.Dock="Right" HorizontalAlignment="Right" VerticalContentAlignment="Center"/>
                         </DockPanel>
-                        <Separator Background="{StaticResource BorderBrush}" Margin="0,10"/>
-                        <Border Background="#2A2A2A" BorderBrush="{StaticResource BorderBrush}" BorderThickness="1" Padding="15" CornerRadius="4">
+                        <Separator Background="{DynamicResource BorderBrush}" Margin="0,10"/>
+                        <Border Background="#2A2A2A" BorderBrush="{DynamicResource BorderBrush}" BorderThickness="1" Padding="15" CornerRadius="4">
                             <StackPanel>
-                                <TextBlock Text="System Drive Status" Foreground="{StaticResource SecondaryTextBrush}" FontSize="12" Margin="0,0,0,5"/>
-                                <TextBlock x:Name="txtStatus" Text="C: Drive - Checking..." FontSize="16" FontWeight="Bold" Foreground="{StaticResource SuccessBrush}"/>
+                                <TextBlock Text="System Drive Status" Foreground="{DynamicResource SecondaryTextBrush}" FontSize="12" Margin="0,0,0,5"/>
+                                <TextBlock x:Name="txtStatus" Text="C: Drive - Checking..." FontSize="16" FontWeight="Bold" Foreground="{DynamicResource SuccessBrush}"/>
                             </StackPanel>
                         </Border>
                     </StackPanel>

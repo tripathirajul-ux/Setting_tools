@@ -8,15 +8,19 @@ namespace WISOptimizer
 {
     public partial class MainWindow : Window
     {
+        private bool _isDarkTheme = true;
+
         public MainWindow()
         {
             InitializeComponent();
+            this.DataContext = ConfigManager.CurrentSettings.Optimization;
             InitializeApp();
         }
 
         private void InitializeApp()
         {
             ConfigManager.LoadConfig();
+            _ = ConfigManager.CurrentSettings.Optimization.LoadCurrentSystemStateAsync();
             LoggingManager.LogInfo("Application Started | BUILD_MARKER=DBG_20260513_1332");
             // #region agent log
             DebugSessionLogger.Log(
@@ -103,52 +107,40 @@ namespace WISOptimizer
             }
         }
 
-        private void ApplyAll_Click(object sender, RoutedEventArgs e)
+        private void ToggleTheme_Click(object sender, RoutedEventArgs e)
         {
-            if (MainContent.Content is not ICommandExportProvider provider)
-            {
-                MessageBox.Show("Open a settings panel first to apply selected optimizations.", "Apply All", MessageBoxButton.OK, MessageBoxImage.Information);
-                return;
-            }
-
-            var commands = provider.GetSelectedPowerShellCommands();
-            if (commands.Count == 0)
-            {
-                MessageBox.Show("No selected optimizations found in current panel.", "Apply All", MessageBoxButton.OK, MessageBoxImage.Information);
-                return;
-            }
-
-            _ = ExecuteCommandsAsync(commands);
+            _isDarkTheme = !_isDarkTheme;
+            string themePath = _isDarkTheme ? "UI/Themes/DarkTheme.xaml" : "UI/Themes/LightTheme.xaml";
+            
+            Application.Current.Resources.MergedDictionaries.Clear();
+            Application.Current.Resources.MergedDictionaries.Add(new ResourceDictionary() { Source = new Uri(themePath, UriKind.Relative) });
         }
 
-        private async System.Threading.Tasks.Task ExecuteCommandsAsync(List<string> commands)
+        private void ApplyAll_Click(object sender, RoutedEventArgs e)
         {
-            foreach (var command in commands)
-            {
-                await PowerShellRunner.RunCommandAsync(command);
+            var script = DeploymentScriptGenerator.GenerateMasterScript(ConfigManager.CurrentSettings.Optimization);
+            _ = ExecuteGlobalScriptAsync(script);
+        }
+
+        private async System.Threading.Tasks.Task ExecuteGlobalScriptAsync(string script)
+        {
+            // Execute the full script as one block
+            var result = await PowerShellRunner.RunCommandAsync(script, 120);
+            if (result.Success) {
+                MessageBox.Show("All global optimizations applied successfully.", "Apply All", MessageBoxButton.OK, MessageBoxImage.Information);
+            } else {
+                MessageBox.Show($"Errors occurred during application:\n{result.Error}", "Apply All", MessageBoxButton.OK, MessageBoxImage.Warning);
             }
-            MessageBox.Show("Selected optimizations applied.", "Apply All", MessageBoxButton.OK, MessageBoxImage.Information);
         }
 
         private void GenerateDeploymentScript_Click(object sender, RoutedEventArgs e)
         {
-            if (MainContent.Content is not ICommandExportProvider provider)
-            {
-                MessageBox.Show("Open a settings panel first.", "Generate Deployment Script", MessageBoxButton.OK, MessageBoxImage.Information);
-                return;
-            }
+            var script = DeploymentScriptGenerator.GenerateMasterScript(ConfigManager.CurrentSettings.Optimization);
 
-            var commands = provider.GetSelectedPowerShellCommands();
-            if (commands.Count == 0)
+            if (DeploymentScriptManager.SavePowerShellScript(script, out var savedPath))
             {
-                MessageBox.Show("No toggled optimizations found in current panel.", "Generate Deployment Script", MessageBoxButton.OK, MessageBoxImage.Information);
-                return;
-            }
-
-            if (DeploymentScriptManager.SavePowerShellScript(commands, out var savedPath))
-            {
-                MessageBox.Show($"Deployment script saved:\n{savedPath}", "Generate Deployment Script", MessageBoxButton.OK, MessageBoxImage.Information);
-                LoggingManager.LogInfo($"Deployment script generated at {savedPath}");
+                MessageBox.Show($"Master deployment script saved:\n{savedPath}", "Generate Deployment Script", MessageBoxButton.OK, MessageBoxImage.Information);
+                LoggingManager.LogInfo($"Master deployment script generated at {savedPath}");
             }
         }
     }

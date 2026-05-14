@@ -8,7 +8,7 @@ namespace WISOptimizer.Core
 {
     public static class DeploymentScriptManager
     {
-        public static bool SavePowerShellScript(IEnumerable<string> commands, out string savedPath)
+        public static bool SavePowerShellScript(string scriptContent, out string savedPath)
         {
             savedPath = string.Empty;
             var backupPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Backup");
@@ -33,8 +33,7 @@ namespace WISOptimizer.Core
                 return false;
             }
 
-            var content = BuildScript(dialog.FileName, commands);
-            File.WriteAllText(dialog.FileName, content, Encoding.UTF8);
+            File.WriteAllText(dialog.FileName, scriptContent, Encoding.UTF8);
             savedPath = dialog.FileName;
             return true;
         }

@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.IO;
 using System.Text.Json;
 using System.Text.Json.Serialization;
@@ -21,6 +21,9 @@ namespace WISOptimizer.Core
 
         [JsonPropertyName("uninstall")]
         public UninstallSettings Uninstall { get; set; } = new UninstallSettings();
+
+        [JsonIgnore] // Don't persist to JSON, load from system dynamically
+        public OptimizationSettings Optimization { get; set; } = new OptimizationSettings();
     }
 
     public class NetworkSettings

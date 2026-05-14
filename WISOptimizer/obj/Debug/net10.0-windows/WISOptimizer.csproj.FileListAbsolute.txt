@@ -84,3 +84,6 @@ C:\Users\RajulTripathiLM\OneDrive - Lohia Mechatronik\Desktop\Projects\Settings_
 C:\Users\RajulTripathiLM\OneDrive - Lohia Mechatronik\Desktop\Projects\Settings_tool\WISOptimizer\obj\Debug\net10.0-windows\WISOptimizer.pdb
 C:\Users\RajulTripathiLM\OneDrive - Lohia Mechatronik\Desktop\Projects\Settings_tool\WISOptimizer\obj\Debug\net10.0-windows\WISOptimizer.genruntimeconfig.cache
 C:\Users\RajulTripathiLM\OneDrive - Lohia Mechatronik\Desktop\Projects\Settings_tool\WISOptimizer\obj\Debug\net10.0-windows\ref\WISOptimizer.dll
+C:\Users\RajulTripathiLM\OneDrive - Lohia Mechatronik\Desktop\Projects\Settings_tool\WisOPtimizer\obj\Debug\net10.0-windows\WISOptimizer.sourcelink.json
+C:\Users\RajulTripathiLM\OneDrive - Lohia Mechatronik\Desktop\Projects\Settings_tool\WISOptimizer\obj\Debug\net10.0-windows\UI\Themes\DarkTheme.baml
+C:\Users\RajulTripathiLM\OneDrive - Lohia Mechatronik\Desktop\Projects\Settings_tool\WISOptimizer\obj\Debug\net10.0-windows\UI\Themes\LightTheme.baml

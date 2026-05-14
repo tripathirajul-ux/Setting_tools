@@ -1,0 +1,17 @@
+[2026-05-14 18:15:14] [INFO] Application Started | BUILD_MARKER=DBG_20260513_1332
+[2026-05-14 18:15:14] [INFO] PS Execute: 
+$state = @{
+    TaskbarLeft = $(try { (Get-ItemPropertyValue 'HKCU:\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced' 'TaskbarAl' -ErrorAction Stop) -eq 0 } catch { $false })
+    HideTaskView = $(try { (Get-ItemPropertyValue 'HKCU:\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced' 'ShowTaskViewButton' -ErrorAction Stop) -eq 0 } catch { $false })
+    RemoveWidgets = $(try { (Get-ItemPropertyValue 'HKCU:\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced' 'TaskbarDa' -ErrorAction Stop) -eq 0 } catch { $false })
+    HideSearch = $(try { (Get-ItemPropertyValue 'HKCU:\Software\Microsoft\Windows\CurrentVersion\Search' 'SearchboxTaskbarMode' -ErrorAction Stop) -eq 0 } catch { $false })
+}
+$state | ConvertTo-Json
+
+[2026-05-14 18:15:16] [INFO] PS OK (exit 0). Output: {
+    "HideTaskView":  true,
+    "HideSearch":  false,
+    "TaskbarLeft":  false,
+    "RemoveWidgets":  false
+}
+[2026-05-14 18:15:29] [INFO] Master deployment script generated at C:\Users\RajulTripathiLM\OneDrive - Lohia Mechatronik\Desktop\WIS_Deployment_20260514_181517.ps1

@@ -3,7 +3,7 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         Title="WIS / CamControl Optimizer [DBG_20260513_1332]" Height="760" Width="1200"
         WindowStartupLocation="CenterScreen"
-        Background="{StaticResource BackgroundBrush}">
+        Background="{DynamicResource BackgroundBrush}">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="240"/>
@@ -16,22 +16,25 @@
         </Grid.RowDefinitions>
 
         <!-- ═══ TOP HEADER ═══ -->
-        <Border Grid.Row="0" Grid.ColumnSpan="2" Background="{StaticResource HeaderBrush}"
-                BorderBrush="{StaticResource BorderBrush}" BorderThickness="0,0,0,1">
+        <Border Grid.Row="0" Grid.ColumnSpan="2" Background="{DynamicResource HeaderBrush}"
+                BorderBrush="{DynamicResource BorderBrush}" BorderThickness="0,0,0,1">
             <Grid Margin="20,0">
                 <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
                     <!-- Icon circle -->
-                    <Border Width="36" Height="36" CornerRadius="18" Background="{StaticResource AccentBrush}" Margin="0,0,12,0">
+                    <Border Width="36" Height="36" CornerRadius="18" Background="{DynamicResource AccentBrush}" Margin="0,0,12,0">
                         <TextBlock Text="⚙" FontSize="18" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="White"/>
                     </Border>
                     <StackPanel VerticalAlignment="Center">
-                        <TextBlock Text="WIS / CamControl Optimizer" FontSize="17" FontWeight="Bold" Foreground="{StaticResource TextBrush}"/>
-                        <TextBlock Text="Windows System Optimization Suite" FontSize="11" Foreground="{StaticResource SecondaryTextBrush}"/>
+                        <TextBlock Text="WIS / CamControl Optimizer" FontSize="17" FontWeight="Bold" Foreground="{DynamicResource TextBrush}"/>
+                        <TextBlock Text="Windows System Optimization Suite" FontSize="11" Foreground="{DynamicResource SecondaryTextBrush}"/>
                     </StackPanel>
                 </StackPanel>
                 <!-- Profile dropdown top right -->
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Center">
-                    <TextBlock Text="Profile:" Foreground="{StaticResource SecondaryTextBrush}" VerticalAlignment="Center" Margin="0,0,8,0"/>
+                    <Button Content="🌗 Toggle Theme" Style="{DynamicResource ModernButton}"
+                            Background="Transparent" Foreground="{DynamicResource TextBrush}" Margin="0,0,16,0"
+                            Click="ToggleTheme_Click"/>
+                    <TextBlock Text="Profile:" Foreground="{DynamicResource SecondaryTextBrush}" VerticalAlignment="Center" Margin="0,0,8,0"/>
                     <ComboBox x:Name="cboProfile" Width="160" VerticalAlignment="Center">
                         <ComboBoxItem Content="Production Mode" IsSelected="True"/>
                         <ComboBoxItem Content="Debug Mode"/>
@@ -43,93 +46,93 @@
         </Border>
 
         <!-- ═══ SIDEBAR ═══ -->
-        <Border Grid.Row="1" Grid.Column="0" Background="{StaticResource SidebarBrush}"
-                BorderBrush="{StaticResource BorderBrush}" BorderThickness="0,0,1,0">
+        <Border Grid.Row="1" Grid.Column="0" Background="{DynamicResource SidebarBrush}"
+                BorderBrush="{DynamicResource BorderBrush}" BorderThickness="0,0,1,0">
             <ScrollViewer VerticalScrollBarVisibility="Auto">
                 <StackPanel x:Name="NavPanel" Margin="0,12,0,12">
 
                     <TextBlock Text="OPTIMIZATION" FontSize="10" FontWeight="Bold"
-                               Foreground="{StaticResource SecondaryTextBrush}"
+                               Foreground="{DynamicResource SecondaryTextBrush}"
                                Margin="20,8,0,6"/>
 
                     <Button Style="{StaticResource SidebarButton}" Click="NavButton_Click" Tag="SystemPerformance">
                         <StackPanel Orientation="Horizontal">
-                            <TextBlock Text="⚡" Width="20" Foreground="{StaticResource AccentBrush}"/>
+                            <TextBlock Text="⚡" Width="20" Foreground="{DynamicResource AccentBrush}"/>
                             <TextBlock Text="System Performance"/>
                         </StackPanel>
                     </Button>
                     <Button Style="{StaticResource SidebarButton}" Click="NavButton_Click" Tag="PowerSleep">
                         <StackPanel Orientation="Horizontal">
-                            <TextBlock Text="🔋" Width="20" Foreground="{StaticResource AccentBrush}"/>
+                            <TextBlock Text="🔋" Width="20" Foreground="{DynamicResource AccentBrush}"/>
                             <TextBlock Text="Power &amp; Sleep"/>
                         </StackPanel>
                     </Button>
                     <Button Style="{StaticResource SidebarButton}" Click="NavButton_Click" Tag="Network">
                         <StackPanel Orientation="Horizontal">
-                            <TextBlock Text="🌐" Width="20" Foreground="{StaticResource AccentBrush}"/>
+                            <TextBlock Text="🌐" Width="20" Foreground="{DynamicResource AccentBrush}"/>
                             <TextBlock Text="Network Optimization"/>
                         </StackPanel>
                     </Button>
 
                     <TextBlock Text="SECURITY" FontSize="10" FontWeight="Bold"
-                               Foreground="{StaticResource SecondaryTextBrush}"
+                               Foreground="{DynamicResource SecondaryTextBrush}"
                                Margin="20,14,0,6"/>
 
                     <Button Style="{StaticResource SidebarButton}" Click="NavButton_Click" Tag="Security">
                         <StackPanel Orientation="Horizontal">
-                            <TextBlock Text="🛡" Width="20" Foreground="{StaticResource AccentBrush}"/>
+                            <TextBlock Text="🛡" Width="20" Foreground="{DynamicResource AccentBrush}"/>
                             <TextBlock Text="Security / Defender"/>
                         </StackPanel>
                     </Button>
                     <Button Style="{StaticResource SidebarButton}" Click="NavButton_Click" Tag="WindowsUpdate">
                         <StackPanel Orientation="Horizontal">
-                            <TextBlock Text="🔄" Width="20" Foreground="{StaticResource AccentBrush}"/>
+                            <TextBlock Text="🔄" Width="20" Foreground="{DynamicResource AccentBrush}"/>
                             <TextBlock Text="Windows Update"/>
                         </StackPanel>
                     </Button>
 
                     <TextBlock Text="SYSTEM" FontSize="10" FontWeight="Bold"
-                               Foreground="{StaticResource SecondaryTextBrush}"
+                               Foreground="{DynamicResource SecondaryTextBrush}"
                                Margin="20,14,0,6"/>
 
                     <Button Style="{StaticResource SidebarButton}" Click="NavButton_Click" Tag="Storage">
                         <StackPanel Orientation="Horizontal">
-                            <TextBlock Text="💾" Width="20" Foreground="{StaticResource AccentBrush}"/>
+                            <TextBlock Text="💾" Width="20" Foreground="{DynamicResource AccentBrush}"/>
                             <TextBlock Text="Storage &amp; Disk"/>
                         </StackPanel>
                     </Button>
                     <Button Style="{StaticResource SidebarButton}" Click="NavButton_Click" Tag="Startup">
                         <StackPanel Orientation="Horizontal">
-                            <TextBlock Text="🚀" Width="20" Foreground="{StaticResource AccentBrush}"/>
+                            <TextBlock Text="🚀" Width="20" Foreground="{DynamicResource AccentBrush}"/>
                             <TextBlock Text="Startup &amp; Services"/>
                         </StackPanel>
                     </Button>
                     <Button Style="{StaticResource SidebarButton}" Click="NavButton_Click" Tag="Logging">
                         <StackPanel Orientation="Horizontal">
-                            <TextBlock Text="📋" Width="20" Foreground="{StaticResource AccentBrush}"/>
+                            <TextBlock Text="📋" Width="20" Foreground="{DynamicResource AccentBrush}"/>
                             <TextBlock Text="Logging &amp; Monitoring"/>
                         </StackPanel>
                     </Button>
                     <Button Style="{StaticResource SidebarButton}" Click="NavButton_Click" Tag="Recovery">
                         <StackPanel Orientation="Horizontal">
-                            <TextBlock Text="🔧" Width="20" Foreground="{StaticResource AccentBrush}"/>
+                            <TextBlock Text="🔧" Width="20" Foreground="{DynamicResource AccentBrush}"/>
                             <TextBlock Text="Recovery &amp; Watchdog"/>
                         </StackPanel>
                     </Button>
                     <Button Style="{StaticResource SidebarButton}" Click="NavButton_Click" Tag="Taskbar">
                         <StackPanel Orientation="Horizontal">
-                            <TextBlock Text="🖥" Width="20" Foreground="{StaticResource AccentBrush}"/>
+                            <TextBlock Text="🖥" Width="20" Foreground="{DynamicResource AccentBrush}"/>
                             <TextBlock Text="Taskbar &amp; UI"/>
                         </StackPanel>
                     </Button>
 
                     <TextBlock Text="CONFIGURATION" FontSize="10" FontWeight="Bold"
-                               Foreground="{StaticResource SecondaryTextBrush}"
+                               Foreground="{DynamicResource SecondaryTextBrush}"
                                Margin="20,14,0,6"/>
 
                     <Button Style="{StaticResource SidebarButton}" Click="NavButton_Click" Tag="Config">
                         <StackPanel Orientation="Horizontal">
-                            <TextBlock Text="⚙" Width="20" Foreground="{StaticResource AccentBrush}"/>
+                            <TextBlock Text="⚙" Width="20" Foreground="{DynamicResource AccentBrush}"/>
                             <TextBlock Text="Configuration Panel"/>
                         </StackPanel>
                     </Button>
@@ -138,36 +141,36 @@
         </Border>
 
         <!-- ═══ MAIN CONTENT ═══ -->
-        <Border Grid.Row="1" Grid.Column="1" Background="{StaticResource BackgroundBrush}" Padding="24">
+        <Border Grid.Row="1" Grid.Column="1" Background="{DynamicResource BackgroundBrush}" Padding="24">
             <ContentControl x:Name="MainContent">
                 <!-- Default welcome screen -->
                 <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
-                    <TextBlock Text="⚙" FontSize="64" HorizontalAlignment="Center" Foreground="{StaticResource AccentBrush}" Margin="0,0,0,20"/>
+                    <TextBlock Text="⚙" FontSize="64" HorizontalAlignment="Center" Foreground="{DynamicResource AccentBrush}" Margin="0,0,0,20"/>
                     <TextBlock Text="WIS / CamControl Optimizer" FontSize="28" FontWeight="Bold" HorizontalAlignment="Center"/>
                     <TextBlock Text="Select a category from the left panel to begin optimization."
-                               FontSize="14" Foreground="{StaticResource SecondaryTextBrush}"
+                               FontSize="14" Foreground="{DynamicResource SecondaryTextBrush}"
                                HorizontalAlignment="Center" Margin="0,10,0,0"/>
                 </StackPanel>
             </ContentControl>
         </Border>
 
         <!-- ═══ STATUS BAR ═══ -->
-        <Border Grid.Row="2" Grid.ColumnSpan="2" Background="{StaticResource HeaderBrush}"
-                BorderBrush="{StaticResource BorderBrush}" BorderThickness="0,1,0,0">
+        <Border Grid.Row="2" Grid.ColumnSpan="2" Background="{DynamicResource HeaderBrush}"
+                BorderBrush="{DynamicResource BorderBrush}" BorderThickness="0,1,0,0">
             <Grid Margin="20,0">
                 <StackPanel Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Left">
-                    <Ellipse Width="8" Height="8" Fill="{StaticResource SuccessBrush}" Margin="0,0,8,0"/>
-                    <TextBlock x:Name="StatusText" Text="Ready" Foreground="{StaticResource SecondaryTextBrush}" FontSize="12"/>
+                    <Ellipse Width="8" Height="8" Fill="{DynamicResource SuccessBrush}" Margin="0,0,8,0"/>
+                    <TextBlock x:Name="StatusText" Text="Ready" Foreground="{DynamicResource SecondaryTextBrush}" FontSize="12"/>
                 </StackPanel>
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Center">
                     <Button Content="Export Config" Style="{StaticResource ModernButton}"
-                            Background="{StaticResource InputBrush}" Margin="5,0"
+                            Background="{DynamicResource InputBrush}" Margin="5,0"
                             Click="ExportConfig_Click"/>
                     <Button Content="Generate Deployment Script" Style="{StaticResource ModernButton}"
-                            Background="{StaticResource InputBrush}" Margin="5,0"
+                            Background="{DynamicResource InputBrush}" Margin="5,0"
                             Click="GenerateDeploymentScript_Click"/>
                     <Button Content="Restore Defaults" Style="{StaticResource ModernButton}"
-                            Background="{StaticResource InputBrush}" Margin="5,0"
+                            Background="{DynamicResource InputBrush}" Margin="5,0"
                             Click="RestoreDefaults_Click"/>
                     <Button Content="  ✔  Apply All  " Style="{StaticResource ModernButton}" Margin="5,0"
                             Click="ApplyAll_Click"/>

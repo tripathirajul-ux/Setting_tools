@@ -52,35 +52,17 @@ namespace WISOptimizer.UI.Views
             }
         }
 
-        private async void Apply_Click(object sender, RoutedEventArgs e)
+        private void Apply_Click(object sender, RoutedEventArgs e)
         {
-            try 
+            try
             {
-                await BackupManager.CreateSystemRestorePointAsync("Before System Performance Changes");
-
-                if (chkAnimations.IsChecked == true)
-                {
-                    var result = await PowerShellRunner.RunCommandAsync("Set-ItemProperty -Path 'HKCU:\\Control Panel\\Desktop' -Name 'UserPreferencesMask' -Value ([byte[]](0x90,0x12,0x03,0x80))");
-                    if (!result.Success) throw new Exception($"Failed to apply animations setting: {result.Error}");
-                }
-
-                if (chkGpuHighPerf.IsChecked == true)
-                {
-                    // Simulate a failure for a feature that might not be available
-                    var result = await PowerShellRunner.RunCommandAsync("Get-CimInstance Win32_VideoController");
-                    if (string.IsNullOrEmpty(result.Output))
-                    {
-                        throw new Exception("No compatible GPU found for high-performance optimization.");
-                    }
-                }
-
-                MessageBox.Show("System Performance settings applied successfully.", "Success", MessageBoxButton.OK, MessageBoxImage.Information);
-                LoadCurrentStatus(); // Refresh
+                var script = WISOptimizer.Core.DeploymentScriptGenerator.GenerateMasterScript(WISOptimizer.Core.ConfigManager.CurrentSettings.Optimization);
+                _ = WISOptimizer.Core.PowerShellRunner.RunCommandAsync(script, 120);
+                MessageBox.Show("Optimizations applied.", "Success", MessageBoxButton.OK, MessageBoxImage.Information);
             }
             catch (Exception ex)
             {
-                LoggingManager.LogError("Error applying system performance settings", ex);
-                MessageBox.Show($"Operation Failed: {ex.Message}\n\nCheck logs for details.", "Execution Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                MessageBox.Show($"Failed: {ex.Message}", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
             }
         }
     }

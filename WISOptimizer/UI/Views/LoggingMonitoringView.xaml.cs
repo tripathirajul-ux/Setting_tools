@@ -40,13 +40,13 @@ namespace WISOptimizer.UI.Views
         }
 
         // FIXED: must be async void since it uses await
-        private async void Apply_Click(object sender, RoutedEventArgs e)
+        private void Apply_Click(object sender, RoutedEventArgs e)
         {
             try
             {
-                await BackupManager.CreateSystemRestorePointAsync("Before Logging Changes");
-                LoggingManager.LogInfo("Logging & Monitoring settings applied.");
-                MessageBox.Show("Settings applied.", "Success", MessageBoxButton.OK, MessageBoxImage.Information);
+                var script = WISOptimizer.Core.DeploymentScriptGenerator.GenerateMasterScript(WISOptimizer.Core.ConfigManager.CurrentSettings.Optimization);
+                _ = WISOptimizer.Core.PowerShellRunner.RunCommandAsync(script, 120);
+                MessageBox.Show("Optimizations applied.", "Success", MessageBoxButton.OK, MessageBoxImage.Information);
             }
             catch (Exception ex)
             {

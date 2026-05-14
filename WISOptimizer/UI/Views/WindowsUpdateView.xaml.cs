@@ -49,41 +49,17 @@ namespace WISOptimizer.UI.Views
             }
         }
 
-        private async void Apply_Click(object sender, RoutedEventArgs e)
+        private void Apply_Click(object sender, RoutedEventArgs e)
         {
             try
             {
-                await BackupManager.CreateSystemRestorePointAsync("Before Windows Update Changes");
-
-                if (chkDisableWindowsUpdate.IsChecked == true)
-                {
-                    var result = await PowerShellRunner.RunCommandAsync(
-                        "Stop-Service wuauserv -Force -ErrorAction SilentlyContinue; Set-Service wuauserv -StartupType Disabled");
-                    if (!result.Success) throw new Exception($"Failed to disable Windows Update: {result.Error}");
-                    lblWuStatus.Text = "● Stopped (OK)";
-                    lblWuStatus.Foreground = (SolidColorBrush)Application.Current.Resources["SuccessBrush"];
-                }
-
-                if (chkDisableDeliveryOpt.IsChecked == true)
-                {
-                    await PowerShellRunner.RunCommandAsync(
-                        "Stop-Service DoSvc -Force -ErrorAction SilentlyContinue; Set-Service DoSvc -StartupType Disabled");
-                    lblDoStatus.Text = "● Stopped (OK)";
-                    lblDoStatus.Foreground = (SolidColorBrush)Application.Current.Resources["SuccessBrush"];
-                }
-
-                if (chkDisableUpdateOrchestrator.IsChecked == true)
-                {
-                    await PowerShellRunner.RunCommandAsync(
-                        "Stop-Service UsoSvc -Force -ErrorAction SilentlyContinue; Set-Service UsoSvc -StartupType Disabled");
-                }
-
-                MessageBox.Show("Windows Update settings applied.", "Success", MessageBoxButton.OK, MessageBoxImage.Information);
+                var script = WISOptimizer.Core.DeploymentScriptGenerator.GenerateMasterScript(WISOptimizer.Core.ConfigManager.CurrentSettings.Optimization);
+                _ = WISOptimizer.Core.PowerShellRunner.RunCommandAsync(script, 120);
+                MessageBox.Show("Optimizations applied.", "Success", MessageBoxButton.OK, MessageBoxImage.Information);
             }
             catch (Exception ex)
             {
-                LoggingManager.LogError("Error disabling Windows Update services", ex);
-                MessageBox.Show($"Operation failed: {ex.Message}", "Update Control Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                MessageBox.Show($"Failed: {ex.Message}", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
             }
         }
     }
